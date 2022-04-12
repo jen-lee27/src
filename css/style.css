@@ -24,6 +24,7 @@ header { width: 100%; background: #6dafde; text-align: center;}
     /* make them inline-block to apply width and height to style the buttons */
     #header-desc a {border: 3px solid #e2eff8; display: inline-block; width: 150px; height: 50px; line-height: 50px; text-align: center; text-decoration: none; border-radius: 20px; font-weight: bold;}
         #header-desc a#btn-resume {color: #e2eff8; margin-right: 16px;}
+            #header-desc a#btn-resume i {color: inherit;}
         #header-desc a#btn-resume:hover {color: #1f233d; border: 3px solid #1f233d; transition: .3s ease-in-out;}
         #header-desc a#btn-contact {background-color: #e2eff8; }
         #header-desc a#btn-contact:hover {border: 3px solid #1f233d; transition: .3s ease-in-out;}
@@ -72,7 +73,7 @@ form label {padding: 10px 0; margin-right: 10px; font-size: 0.8em; color: #fff}
 
 
 /* viewport width: 0 - 960px */
-@media (max-width: 960px){
+@media screen and (max-width: 960px){
     .container {width: 100%;}
 
     /* section: infographic */
@@ -89,7 +90,7 @@ form label {padding: 10px 0; margin-right: 10px; font-size: 0.8em; color: #fff}
     #section-contact form {margin: 0 100px;}
 }
 /* viewport width: 0 - 400px */
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
     /* header  */
     #header-img img {width: 120px;} /* make profile image smaller to fit in screen */
     #header-desc h1 { font-size: 2em;}
