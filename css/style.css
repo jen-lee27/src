@@ -23,11 +23,10 @@ header { width: 100%; background: #6dafde; text-align: center;}
     /* display the two buttons side-by-side */
     /* make them inline-block to apply width and height to style the buttons */
     #header-desc a {border: 3px solid #e2eff8; display: inline-block; width: 150px; height: 50px; line-height: 50px; text-align: center; text-decoration: none; border-radius: 20px; font-weight: bold;}
-        #header-desc a#btn-resume {color: #e2eff8; margin-right: 16px;}
-            #header-desc a#btn-resume i {color: inherit;}
-        #header-desc a#btn-resume:hover {color: #1f233d; border: 3px solid #1f233d; transition: .3s ease-in-out;}
+        #header-desc a#btn-resume {background-color: #e2eff8; margin-right: 16px;}
         #header-desc a#btn-contact {background-color: #e2eff8; }
-        #header-desc a#btn-contact:hover {border: 3px solid #1f233d; transition: .3s ease-in-out;}
+        #header-desc a#btn-contact:hover,
+        #header-desc a#btn-resume:hover {background-color: #a7cbe5; border: 3px solid #1f233d; transition: .3s ease-in-out;}
 
 /* section: infographic */
 #section-info { width: 100%; background: #f2f2f2; color: #2b3e6f;}
