@@ -1,0 +1,131 @@
+/* contents container */
+.container { max-width: 1024px; height: inherit; margin: 0 auto; /* background: rgba(0,0,0,0.3); */}
+
+/* shared attributes */
+h2 {font-size: 1.6em; padding-bottom: 20px;}
+
+/* header */
+#header { width: 100%; background: #0a0b0d; position: sticky; top: 0; left: 0; z-index: 20;}
+.header { padding: 30px 100px; display: flex; align-items: center;}
+.header a {color: #eee; font-size: 14px; text-transform: uppercase;}
+.header a:hover {color: #1985FF;}
+    .header a > i {font-size: 20px; vertical-align: middle; padding-right: 6px;}
+
+#header-menu {width: 30%;}
+#header-logo {width: 40%; text-align: center;}
+    #header-logo svg {width: 20%;}
+#header-nav {width: 30%;}
+    #header-nav ul {float: right; width: 100%; display: flex; justify-content: space-between;}
+    #header-nav li a {font-size: 12px;}
+
+#menu_contents {padding: 0 100px 30px; display: none;}
+#menu_contents ul {padding-top: 30px; display: flex; border-top: 1px solid rgba(157, 172, 193, 0.4);}
+#menu_contents ul li {padding-right: 30px;}
+#menu_contents ul li a {display: block; padding: 5px 0; color: #fff; font-size: 1.1em;}
+#menu_contents ul li a:hover {color: #1985FF;}
+
+/* section: banner */
+#banner {padding-top: 20px; width: 100%; overflow:hidden;}
+.banner {position: relative; overflow: hidden;}
+.swiper-slide {font-size: 0;}
+
+.card-wrapper { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; grid-gap: 30px;}
+.card a {display: block;}
+    .card img { width: 100%; height: 260px;}
+    .card p { font-size: 1.1em; padding: 8px 0;}
+.card p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    max-height: 28px;
+}
+.card > div a {display: block; text-transform: uppercase; color: #025cc0; margin-bottom: 8px;}
+.card > div a:hover {color: #013874;}
+    .card > div a.trailer {color: #ff671f;}
+    .card > div a.trailer:hover {color: #9f3300;}
+.card > div .date {color: #909090; font-size: 0.9em; border: 1px solid #d4d4d4; padding: 5px 10px; display: inline-block;}
+
+/* section: movies */
+#movies {width: 100%; background: #fff;}
+.movies {padding: 50px 0;}
+#category ul {display: flex; justify-content: space-between; border-bottom: 1px solid #004ea8; margin-bottom: 20px;}
+.left {display: flex;}
+.left li {text-align: center; border: 1px solid #004ea8; margin-right: -1px; margin-bottom: -1px;}
+.left li:nth-child(2) {border-right: 1px solid #fff; border-left: 1px solid #fff;}
+.left li a {
+    padding: 12px 38px;
+    display: block;
+    background: #004ea8;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.left li.active {border-bottom: 1px solid #fff; border-right: 1px solid #004ea8; border-left: 1px solid #004ea8;}
+.left li.active a {color: #004ea8; background: #fff;}
+
+.right .ui_select {
+    text-align: center;
+    border: 1px solid #004ea8;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    padding: 12px 38px;
+    background: #004ea8;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    appearance:none;
+}
+.right .ui_select option {background: #fff; color: #004ea8; text-align: left;}
+
+/* section: special */
+#special {width: 100%; background: #f8f8f8;}
+.special {padding: 50px 0;}
+.special .more .card-image {background-color: #004ea8; text-align: center; height: 260px; position: relative;}
+.special .more .card-image:hover {background-color: #062951;}
+.special .more .card-image span {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* section: more-offers */
+#more-offers {width: 100%; background: #fff;}
+.more-offers {padding: 50px 0;}
+.more-offers ul {display: flex; justify-content: space-between; padding: 30px; background: #f8f8f8;}
+.more-offers li {}
+.more-offers ul li a {color: #025cc0; font-size: 1.2em;}
+.more-offers ul li a img {width: 60px; padding-right: 12px; vertical-align: middle;}
+.more-offers ul li a:hover {color: #013874;}
+.more-offers ul li a span {}
+
+/* section: latest news */
+
+/* footer */
+#footer {width: 100%; background: #0a0a0a;}
+.footer {padding: 50px 140px;}
+
+.footer-nav {display: flex; padding-bottom: 30px; border-bottom: 1px solid rgba(157, 172, 193, 0.4);}
+.footer-nav > div {width: 33.3333%;}
+.footer-nav > div h3 {color: #fff; font-size: 1.5em; padding-bottom: 12px;}
+.footer-nav > div ul {}
+.footer-nav > div li {padding-bottom: 8px;}
+.footer-nav > div li a {color: #888; font-size: 1.3em;}
+.footer-nav > div li a:hover {color: #fff;}
+
+.footer-sig {text-align: center; padding-top: 30px;}
+.footer-sig svg {width: 100px;}
+.footer-sig ul {display: flex; justify-content: center; padding-top: 20px;}
+.footer-sig li {padding-right: 50px;}
+.footer-sig li:last-child{padding-right: 0;}
+.footer-sig li a {color: #888;}
+.footer-sig li a:hover {color: #fff;}
