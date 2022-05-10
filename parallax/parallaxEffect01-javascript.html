@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Layout</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'NEXONLv1Gothic';
+            font-weight: 300;
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NEXONLv1Gothic';
+            font-weight: 300;
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-style: normal;
+        }
+        
+        * {margin: 0; padding: 0;}
+        .parallax {
+            background: #222;
+            color: #fff;
+            font-family: 'NEXONLv1Gothic';
+            font-weight: 400;
+        }
+        #paraHeader {padding: 20px;}
+            #paraHeader h1 {
+                display: inline-block;
+                font-size: 20px;
+                border-bottom: 1px dashed #fff;
+                margin-bottom: 8px;
+            }
+        #paraCont {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            overflow: hidden;
+        }
+        #paraFooter {
+            padding: 10vw 0;
+        }
+        #paraFooter h2 {
+            font-size: 8vw;
+            line-height: 1.2;
+            padding: 10vw 8vw 0 8vw;
+            text-transform: uppercase;
+            margin-bottom: 3vw;
+        }
+        #paraFooter h2 em {
+            display: block;
+            font-family: 'Lato';
+            font-weight: 100;
+            padding-left: 18vw;
+        }
+        #paraFooter .footerInfo {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            padding: 15px 20px;
+            margin-bottom: 2px;
+        }
+        #paraFooter .footerInfo h3 {
+            padding: 0 10px;
+        }
+        #paraFooter .footerInfo li {
+            display: inline;
+            list-style: none;
+        }
+        #paraFooter .footerInfo li a {
+            text-decoration: none;
+            color: #fff;
+            border: 1px dashed #fff;
+            display: inline-block;
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            line-height: 32px;
+        }
+        #paraFooter .footerInfo li.active a,
+        #paraFooter .footerInfo li a:hover {
+            background: #fff;
+            color: #000;
+        }
+        
+        .content_item {
+            width: 800px;
+            max-width: 70vw;
+            margin: 30vw 0;
+            /* background: rgba(255, 255, 255, 0.3); */
+            text-align: right;
+            position: relative;
+            padding-top: 10vw;
+        }
+        .content_item:nth-child(even) {
+            margin-left: auto;
+            text-align: left;
+        }
+        
+        .content_item_num {
+            font-family: 'Lato';
+            font-size: 25vw;
+            opacity: 0.07;
+            position: absolute;
+            right: -5vw; top: -10vw;
+        }
+        .content_item:nth-child(even) .content_item_num {
+            right: auto;
+            left: -5vw;
+        }
+
+        .content_item_title {
+            padding-bottom: 1vw;
+            font-size: 2vw;
+        }
+        .content_item_imgWrap {
+            width: 100%;
+            padding-bottom: 56%;
+            background: #000;
+            position: relative;
+        }
+        .content_item_img {
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: saturate(0%);
+            transition: all 1s;
+        }
+        .content_item_img:hover {
+            filter: saturate(100%);
+        }
+        .content_item_desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            word-break: keep-all;
+            margin-top: -6vw;
+            margin-right: -3vw;
+            position: relative;
+            z-index: 100;
+        }
+        .content_item:nth-child(even) .content_item_desc {
+            margin-right: 0;
+            margin-left: -3vw;
+        }
+
+        .content_item:nth-child(1) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg11.jpg");
+        }
+        .content_item:nth-child(2) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg12.jpg");
+        }
+        .content_item:nth-child(3) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg13.jpg");
+        }
+        .content_item:nth-child(4) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg14.jpg");
+        }
+        .content_item:nth-child(5) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg15.jpg");
+        }
+        .content_item:nth-child(6) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg16.jpg");
+        }
+        .content_item:nth-child(7) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg17.jpg");
+        }
+        .content_item:nth-child(8) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg18.jpg");
+        }
+        .content_item:nth-child(9) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg19.jpg");
+        }
+
+        /* nav */
+        .paraNav {
+            position: fixed;
+            right: 20px; top: 20px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.4);
+            padding: 15px 20px;
+            border-radius: 50px;
+        }
+        .paraNav li {
+            display: inline-block;
+            list-style: none;
+        }
+        .paraNav li a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px;
+            width: 30px; height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .paraNav li.active a {
+            background: #fff;
+            color: #000;
+            border-radius: 50%;
+        }
+
+        /* info */
+        .paraScroll {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 12px;
+            padding: 0px 20px;
+        }
+        .paraInfo {
+            position: fixed;
+            left: 20px;
+            bottom: 70px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 20px;
+            font-size: 12px;
+            line-height: 1.8;
+            border-radius: 10px;
+        }
+        .paraInfo li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body class="parallax">
+    <div class="paraScroll">scrollTop() : <span>0</span>px</div>
+    <div class="paraInfo">
+        <ul>
+            <li>#section1 offset() : <span class="offset1">0</span></li>
+            <li>#section2 offset() : <span class="offset2">0</span></li>
+            <li>#section3 offset() : <span class="offset3">0</span></li>
+            <li>#section4 offset() : <span class="offset4">0</span></li>
+            <li>#section5 offset() : <span class="offset5">0</span></li>
+            <li>#section6 offset() : <span class="offset6">0</span></li>
+            <li>#section7 offset() : <span class="offset7">0</span></li>
+            <li>#section8 offset() : <span class="offset8">0</span></li>
+            <li>#section9 offset() : <span class="offset9">0</span></li>
+        </ul>
+    </div>
+    <!-- //info -->
+
+    <header id="paraHeader">
+        <h1>Parallax Effect01 - Javascript</h1>
+        <p>Parallax Scrolling Effect - Menu Navigation</p>
+    </header>
+    <!-- //header -->
+
+    <nav class="paraNav">
+        <ul>
+            <li class="active"><a href="#section1">s1</a></li>
+            <li><a href="#section2">s2</a></li>
+            <li><a href="#section3">s3</a></li>
+            <li><a href="#section4">s4</a></li>
+            <li><a href="#section5">s5</a></li>
+            <li><a href="#section6">s6</a></li>
+            <li><a href="#section7">s7</a></li>
+            <li><a href="#section8">s8</a></li>
+            <li><a href="#section9">s9</a></li>
+        </ul>
+    </nav>
+    <!-- //nav -->
+
+    <main id="paraCont">
+        <section id="section1" class="content_item">
+            <span class="content_item_num">01</span>
+            <h2 class="content_item_title">Section1</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">Don't cry because it's over.<br> Smile because it happened.</p>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2" class="content_item">
+            <span class="content_item_num">02</span>
+            <h2 class="content_item_title">Section2</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">You make mistakes.<br> Mistakes don't make you.</p>
+        </section>
+        <!-- //section2 -->
+
+        <section id="section3" class="content_item">
+            <span class="content_item_num">03</span>
+            <h2 class="content_item_title">Section3</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">Don't dream your life,<br> live your dream.</p>
+        </section>
+        <!-- //section3 -->
+
+        <section id="section4" class="content_item">
+            <span class="content_item_num">04</span>
+            <h2 class="content_item_title">Section4</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">Dream without fear.<br> Love without limits.</p>
+        </section>
+        <!-- //section4 -->
+
+        <section id="section5" class="content_item">
+            <span class="content_item_num">05</span>
+            <h2 class="content_item_title">Section5</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">The roots of education are bitter, but the fruit is sweet.</p>
+        </section>
+        <!-- //section5 -->
+
+        <section id="section6" class="content_item">
+            <span class="content_item_num">06</span>
+            <h2 class="content_item_title">Section6</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">The grass is greener where you water it.</p>
+        </section>
+        <!-- //section6 -->
+
+        <section id="section7" class="content_item">
+            <span class="content_item_num">07</span>
+            <h2 class="content_item_title">Section7</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">Whatever you are, be a good one.</p>
+        </section>
+        <!-- //section7 -->
+        
+        <section id="section8" class="content_item">
+            <span class="content_item_num">08</span>
+            <h2 class="content_item_title">Section8</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">Don't tell people your plans.<br> Show them your results.</p>
+        </section>
+        <!-- //section8 -->
+
+        <section id="section9" class="content_item">
+            <span class="content_item_num">09</span>
+            <h2 class="content_item_title">Section9</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">Die with memories,<br> not dreams.</p>
+        </section>
+        <!-- //section9 -->
+    </main>
+    <!-- //main -->
+
+    <footer id="paraFooter">
+        <h2>Parallax <em>Scrolling</em></h2>
+        <div class="footerInfo">
+            <h3>jQuery</h3>
+            <ul>
+                <li><a href="parallaxEffect01-jquery.html">1</a></li>
+                <li><a href="parallaxEffect02-jquery.html">2</a></li>
+                <li><a href="parallaxEffect03-jquery.html">3</a></li>
+                <li><a href="parallaxEffect04-jquery.html">4</a></li>
+                <li><a href="parallaxEffect05-jquery.html">5</a></li>
+                <li><a href="parallaxEffect06-jquery.html">6</a></li>
+                <li><a href="parallaxEffect07-jquery.html">7</a></li>
+                <li><a href="parallaxEffect08-jquery.html">8</a></li>
+            </ul>
+        </div>
+        <div class="footerInfo">
+            <h3>Javascript</h3>
+            <ul>
+                <li class="active"><a href="parallaxEffect01-javascript.html">1</a></li>
+                <li><a href="parallaxEffect02-javascript.html">2</a></li>
+                <li><a href="parallaxEffect03-javascript.html">3</a></li>
+                <li><a href="parallaxEffect04-javascript.html">4</a></li>
+                <li><a href="parallaxEffect05-javascript.html">5</a></li>
+                <li><a href="parallaxEffect06-javascript.html">6</a></li>
+                <li><a href="parallaxEffect07-javascript.html">7</a></li>
+                <li><a href="parallaxEffect08-javascript.html">8</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        addEventListener("DOMContentLoaded", function () {
+
+            document.querySelector(".offset1").innerText = parseInt(document.getElementById("section1").offsetTop) + "px";
+            document.querySelector(".offset2").innerText = parseInt(document.getElementById("section2").offsetTop) + "px";
+            document.querySelector(".offset3").innerText = parseInt(document.getElementById("section3").offsetTop) + "px";
+            document.querySelector(".offset4").innerText = parseInt(document.getElementById("section4").offsetTop) + "px";
+            document.querySelector(".offset5").innerText = parseInt(document.getElementById("section5").offsetTop) + "px";
+            document.querySelector(".offset6").innerText = parseInt(document.getElementById("section6").offsetTop) + "px";
+            document.querySelector(".offset7").innerText = parseInt(document.getElementById("section7").offsetTop) + "px";
+            document.querySelector(".offset8").innerText = parseInt(document.getElementById("section8").offsetTop) + "px";
+            document.querySelector(".offset9").innerText = parseInt(document.getElementById("section9").offsetTop) + "px";
+
+            //upon button click
+            document.querySelectorAll(".paraNav ul li a").forEach( li => {
+                li.addEventListener("click", e => {
+                    e.preventDefault();
+                    document.querySelector(li.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth"
+                    });
+                });
+            });
+
+            //upon scrolling
+            window.addEventListener("scroll", function() {
+                // any of the below works
+                // let scrollTop = window.pageYOffset;
+                // let scrollTop = document.documentElement.scrollTop;
+                // let scrollTop = window.scrollY;
+
+                // for cross browser compatibility, use all of them
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+
+                document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
+
+                if(scrollTop >= document.getElementById("section1").offsetTop -2) {
+                    document.querySelectorAll(".paraNav ul li").forEach(li => {
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".paraNav ul li:nth-child(1)").classList.add("active");
+                }
+                if(scrollTop >= document.getElementById("section2").offsetTop -2) {
+                    document.querySelectorAll(".paraNav ul li").forEach(li => {
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".paraNav ul li:nth-child(2)").classList.add("active");
+                }
+                if(scrollTop >= document.getElementById("section3").offsetTop -2) {
+                    document.querySelectorAll(".paraNav ul li").forEach(li => {
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".paraNav ul li:nth-child(3)").classList.add("active");
+                }
+                if(scrollTop >= document.getElementById("section4").offsetTop -2) {
+                    document.querySelectorAll(".paraNav ul li").forEach(li => {
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".paraNav ul li:nth-child(4)").classList.add("active");
+                }
+                if(scrollTop >= document.getElementById("section5").offsetTop -2) {
+                    document.querySelectorAll(".paraNav ul li").forEach(li => {
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".paraNav ul li:nth-child(5)").classList.add("active");
+                }
+                if(scrollTop >= document.getElementById("section6").offsetTop -2) {
+                    document.querySelectorAll(".paraNav ul li").forEach(li => {
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".paraNav ul li:nth-child(6)").classList.add("active");
+                }
+                if(scrollTop >= document.getElementById("section7").offsetTop -2) {
+                    document.querySelectorAll(".paraNav ul li").forEach(li => {
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".paraNav ul li:nth-child(7)").classList.add("active");
+                }
+                if(scrollTop >= document.getElementById("section8").offsetTop -2) {
+                    document.querySelectorAll(".paraNav ul li").forEach(li => {
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".paraNav ul li:nth-child(8)").classList.add("active");
+                }
+                if(scrollTop >= document.getElementById("section9").offsetTop -2) {
+                    document.querySelectorAll(".paraNav ul li").forEach(li => {
+                        li.classList.remove("active")
+                    });
+                    document.querySelector(".paraNav ul li:nth-child(9)").classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

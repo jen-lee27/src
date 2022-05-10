@@ -406,20 +406,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
-        //navigating upon button click
-        $(".paraNav ul li").click(function(e) {
-            e.preventDefault(); //prevent default attributes of #
-            let target = $(this);
-            let index = target.index();
-            let section = $(".content_item").eq(index);
-            let offset = section.offset().top;
-            $("html, body").animate({scrollTop:offset}, 600);
-        });
-
-        //upon scrolling
-        $(window).scroll(function() {
-            let scrollTop = $(window).scrollTop(); //current position of the browser
-            $(".paraScroll span").text(parseInt(scrollTop)); //display scrollTop value on screen
+        $( document ).ready(function() {
             $(".offset1").text(parseInt($("#section1").offset().top) + "px");
             $(".offset2").text(parseInt($("#section2").offset().top) + "px");
             $(".offset3").text(parseInt($("#section3").offset().top) + "px");
@@ -430,33 +417,49 @@
             $(".offset8").text(parseInt($("#section8").offset().top) + "px");
             $(".offset9").text(parseInt($("#section9").offset().top) + "px");
 
-            if(scrollTop >= $("#section1").offset().top -2) { //-2 to prevent offset errors
-                $(".paraNav ul li").eq(0).addClass("active").siblings().removeClass("active");
-            }
-            if(scrollTop >= $("#section2").offset().top -2) {
-                $(".paraNav ul li").eq(1).addClass("active").siblings().removeClass("active");
-            }
-            if(scrollTop >= $("#section3").offset().top -2) {
-                $(".paraNav ul li").eq(2).addClass("active").siblings().removeClass("active");
-            }
-            if(scrollTop >= $("#section4").offset().top -2) {
-                $(".paraNav ul li").eq(3).addClass("active").siblings().removeClass("active");
-            }
-            if(scrollTop >= $("#section5").offset().top -2) {
-                $(".paraNav ul li").eq(4).addClass("active").siblings().removeClass("active");
-            }
-            if(scrollTop >= $("#section6").offset().top -2) {
-                $(".paraNav ul li").eq(5).addClass("active").siblings().removeClass("active");
-            }
-            if(scrollTop >= $("#section7").offset().top -2) {
-                $(".paraNav ul li").eq(6).addClass("active").siblings().removeClass("active");
-            }
-            if(scrollTop >= $("#section8").offset().top -2) {
-                $(".paraNav ul li").eq(7).addClass("active").siblings().removeClass("active");
-            }
-            if(scrollTop >= $("#section9").offset().top -2) {
-                $(".paraNav ul li").eq(8).addClass("active").siblings().removeClass("active");
-            }
+            //navigating upon button click
+            $(".paraNav ul li").click(function(e) {
+                e.preventDefault(); //prevent default attributes of #
+                let target = $(this);
+                let index = target.index();
+                let section = $(".content_item").eq(index);
+                let offset = section.offset().top;
+                $("html, body").animate({scrollTop:offset}, 600);
+            });
+
+            //upon scrolling
+            $(window).scroll(function() {
+                let scrollTop = $(window).scrollTop(); //current position of the browser
+                $(".paraScroll span").text(parseInt(scrollTop)); //display scrollTop value on screen
+
+                if(scrollTop >= $("#section1").offset().top -2) { //-2 to prevent offset errors
+                    $(".paraNav ul li").eq(0).addClass("active").siblings().removeClass("active");
+                }
+                if(scrollTop >= $("#section2").offset().top -2) {
+                    $(".paraNav ul li").eq(1).addClass("active").siblings().removeClass("active");
+                }
+                if(scrollTop >= $("#section3").offset().top -2) {
+                    $(".paraNav ul li").eq(2).addClass("active").siblings().removeClass("active");
+                }
+                if(scrollTop >= $("#section4").offset().top -2) {
+                    $(".paraNav ul li").eq(3).addClass("active").siblings().removeClass("active");
+                }
+                if(scrollTop >= $("#section5").offset().top -2) {
+                    $(".paraNav ul li").eq(4).addClass("active").siblings().removeClass("active");
+                }
+                if(scrollTop >= $("#section6").offset().top -2) {
+                    $(".paraNav ul li").eq(5).addClass("active").siblings().removeClass("active");
+                }
+                if(scrollTop >= $("#section7").offset().top -2) {
+                    $(".paraNav ul li").eq(6).addClass("active").siblings().removeClass("active");
+                }
+                if(scrollTop >= $("#section8").offset().top -2) {
+                    $(".paraNav ul li").eq(7).addClass("active").siblings().removeClass("active");
+                }
+                if(scrollTop >= $("#section9").offset().top -2) {
+                    $(".paraNav ul li").eq(8).addClass("active").siblings().removeClass("active");
+                }
+            });
         });
     </script>
 </body>
