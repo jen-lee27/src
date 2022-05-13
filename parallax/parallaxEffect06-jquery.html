@@ -134,7 +134,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             filter: saturate(0%);
-            transition: all 1s;
+            /* transition: all 1s; */
         }
         .content_item_img:hover {
             filter: saturate(100%);
@@ -436,7 +436,7 @@
                 let offset2 = (scrollTop - $(this).offset().top) * 0.1;
                 $(this).find(".content_item_img").css({transform: "translateY(" + offset1 + "px)"});
                 $(this).find(".content_item_desc").css({transform: "translateY(" + offset2 + "px)"});
-                $(this).find(".content_item_num").css({transform: "translateY(" + -offset2 + "px)"});
+                $(this).find(".content_item_num").css({transform: "rotate(" + -offset2 + "deg)"});
 
                 if(scrollTop >= $(this).offset().top - 2) {
                     $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
