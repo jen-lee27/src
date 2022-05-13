@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Layout</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'NEXONLv1Gothic';
+            font-weight: 300;
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NEXONLv1Gothic';
+            font-weight: 300;
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-style: normal;
+        }
+        
+        * {margin: 0; padding: 0;}
+        .parallax {
+            background: #222;
+            color: #fff;
+            font-family: 'NEXONLv1Gothic';
+            font-weight: 400;
+        }
+        #paraHeader {padding: 20px;}
+            #paraHeader h1 {
+                display: inline-block;
+                font-size: 20px;
+                border-bottom: 1px dashed #fff;
+                margin-bottom: 8px;
+            }
+        #paraCont {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            overflow: hidden;
+        }
+        #paraFooter {
+            padding: 10vw 0;
+        }
+        #paraFooter h2 {
+            font-size: 8vw;
+            line-height: 1.2;
+            padding: 10vw 8vw 0 8vw;
+            text-transform: uppercase;
+            margin-bottom: 3vw;
+        }
+        #paraFooter h2 em {
+            display: block;
+            font-family: 'Lato';
+            font-weight: 100;
+            padding-left: 18vw;
+        }
+        #paraFooter .footerInfo {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            padding: 15px 20px;
+            margin-bottom: 2px;
+        }
+        #paraFooter .footerInfo h3 {
+            padding: 0 10px;
+        }
+        #paraFooter .footerInfo li {
+            display: inline;
+            list-style: none;
+        }
+        #paraFooter .footerInfo li a {
+            text-decoration: none;
+            color: #fff;
+            border: 1px dashed #fff;
+            display: inline-block;
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            line-height: 32px;
+        }
+        #paraFooter .footerInfo li.active a,
+        #paraFooter .footerInfo li a:hover {
+            background: #fff;
+            color: #000;
+        }
+        
+        .content_item {
+            width: 800px;
+            max-width: 70vw;
+            margin: 30vw 0;
+            /* background: rgba(255, 255, 255, 0.3); */
+            text-align: right;
+            position: relative;
+            padding-top: 10vw;
+        }
+        .content_item:nth-child(even) {
+            margin-left: auto;
+            text-align: left;
+        }
+        
+        .content_item_num {
+            font-family: 'Lato';
+            font-size: 25vw;
+            opacity: 0.07;
+            position: absolute;
+            right: -5vw; top: -10vw;
+        }
+        .content_item:nth-child(even) .content_item_num {
+            right: auto;
+            left: -5vw;
+        }
+
+        .content_item_title {
+            padding-bottom: 1vw;
+            font-size: 2vw;
+        }
+        .content_item_imgWrap {
+            width: 100%;
+            padding-bottom: 56%;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+        .content_item_img {
+            position: absolute;
+            left: -10%; top: -10%;
+            width: 120%;
+            height: 120%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: saturate(0%);
+            /* transition: all 1s; */
+        }
+        .content_item_img:hover {
+            filter: saturate(100%);
+        }
+        .content_item_desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            word-break: keep-all;
+            margin-top: -6vw;
+            margin-right: -3vw;
+            position: relative;
+            z-index: 100;
+        }
+        .content_item:nth-child(even) .content_item_desc {
+            margin-right: 0;
+            margin-left: -3vw;
+        }
+
+        .content_item:nth-child(1) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg1.jpg");
+        }
+        .content_item:nth-child(2) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg2.jpg");
+        }
+        .content_item:nth-child(3) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg3.jpg");
+        }
+        .content_item:nth-child(4) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg4.jpg");
+        }
+        .content_item:nth-child(5) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg5.jpg");
+        }
+        .content_item:nth-child(6) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg6.jpg");
+        }
+        .content_item:nth-child(7) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg7.jpg");
+        }
+        .content_item:nth-child(8) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg8.jpg");
+        }
+        .content_item:nth-child(9) .content_item_img {
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg9.jpg");
+        }
+
+         /* nav */
+        .paraNav {
+            position: fixed;
+            right: 20px; top: 20px;
+            z-index: 1000;
+            background: rgba(0,0,0,.4);
+            padding: 15px 20px;
+            border-radius: 50px;
+            transition: top 0.4s ease;
+        }
+        .paraNav li {
+            display: inline-block;
+            list-style: none;
+        }
+        .paraNav li a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px;
+            width: 30px; height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+        }
+        .paraNav li.active a {
+            background: #fff;
+            color: #000;
+        }
+
+        /* info */
+        .paraScroll {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            background: rgba(0,0,0,.4);
+            color: #fff;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 12px;
+            padding: 0px 20px;
+        }
+
+        /* nav */
+        .paraNav {
+            position: fixed;
+            right: 20px; top: 20px;
+            z-index: 1000;
+            background: rgba(0,0,0,.4);
+            padding: 15px 20px;
+            border-radius: 50px;
+            transition: top 0.4s ease;
+        }
+        .paraNav li {
+            display: inline-block;
+            list-style: none;
+        }
+        .paraNav li a {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 30px;
+        }
+        .paraNav li.active a {
+            background: #fff;
+            color: #000;
+        }
+
+        /* info */
+        .paraScroll {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            background: rgba(0,0,0,.4);
+            color: #fff;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 12px;
+            padding: 0px 20px;
+        }
+
+        /* show all at once */
+        /* .content_item_desc {
+            opacity: 0;
+            transform: translateY(100px) skew(30deg);
+            transition: all .4s ease-out;
+        }
+        .content_item_desc.show {
+            transform: translateY(0) skew(0);
+            opacity: 1;
+        } */
+
+        /* one letter at a time */
+        /* .content_item_desc span {
+            display: inline-block;
+            min-width: 1vw;
+            opacity: 0;
+            transform: translate(-100px, 30px) rotate(70deg);
+            transition: all .4s ease-in-out;
+        }
+        .content_item_desc span.show {
+            transform: translate(0, 0) rotate(0);
+            opacity: 1;
+        } */
+
+        /* one letter at a time: using animate.css */
+        .content_item_desc span {
+            display: inline-block;
+            min-width: 1vw; /* spaces between words */
+            opacity: 0;
+        }
+        .content_item_desc span.show {
+            opacity: 1;
+        }
+        #section1 .content_item__desc span.show {
+            animation: opacity 0.3s;
+        }
+        #section2 .content_item_desc span.show {
+            animation: rotate 0.3s;
+        }
+        #section3 .content_item_desc span.show {
+            animation: rubberBand 0.3s;
+        }
+        #section4 .content_item_desc span.show {
+            animation: flipOutX 0.3s;
+        }
+        #section5 .content_item_desc span.show {
+            animation: rotateOut 0.3s;
+        }
+        #section6 .content_item_desc span.show {
+            animation: zoomInUp 0.3s;
+        }
+        @keyframes opacity {
+            0%   {opacity: 0; transform: translateY(50px);}
+            100% {opacity: 1; transform: translateY(0px);}
+        }
+        @keyframes rotate {
+            0%   {opacity: 0; transform: translateY(150px) rotate(360deg);}
+            100% {opacity: 1; transform: translateY(0px) rotate(0);}
+        }
+        @keyframes rubberBand {
+            0%   {transform: scale3d(1, 1, 1);}
+            30%  {transform: scale3d(1.25, 0.75, 1);}
+            40%  {transform: scale3d(0.75, 1.25, 1);}
+            50%  {transform: scale3d(1.15, 0.85, 1);}
+            65%  {transform: scale3d(0.95, 1.05, 1);}
+            75%  {transform: scale3d(1.05, 0.95, 1);}
+            100% {transform: scale3d(1, 1, 1);}
+        }
+        @keyframes flipOutX {
+            0%   {transform: perspective(400px);}
+            30%  {transform: perspective(400px) rotate3d(0, 1, 0, -20deg); opacity: 1;}
+            100% {transform: perspective(400px) rotate3d(1, 0, 0, 90deg); opacity: 0;}
+        }
+        @keyframes rotateOut {
+            0%   {opacity: 0; transform: rotate3d(0, 0, 1, 200deg);}
+            100% {opacity: 1;}
+        }
+        @keyframes zoomInUp {
+            from {
+                opacity: 0;
+                transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            }
+        }   
+    </style>
+</head>
+<body class="parallax">
+
+    <div class="paraScroll">scrollTop() : <span>0</span>px</div>
+    <!-- //info -->
+
+    <header id="paraHeader">
+        <h1>Parallax Effect07 - Javascript</h1>
+        <p>Parallax Scrolling Effect - Text Effect</p>
+    </header>
+    <!-- //header -->
+
+    <nav class="paraNav">
+        <ul>
+            <li class="active"><a href="#section1">s1</a></li>
+            <li><a href="#section2">s2</a></li>
+            <li><a href="#section3">s3</a></li>
+            <li><a href="#section4">s4</a></li>
+            <li><a href="#section5">s5</a></li>
+            <li><a href="#section6">s6</a></li>
+            <li><a href="#section7">s7</a></li>
+            <li><a href="#section8">s8</a></li>
+            <li><a href="#section9">s9</a></li>
+        </ul>
+    </nav>
+    <!-- //nav -->
+    
+    <main id="paraCont">
+        <section id="section1" class="content_item">
+            <span class="content_item_num">01</span>
+            <h2 class="content_item_title">Section1</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">Don't cry because it's over.<br> Smile because it happened.</p>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2" class="content_item">
+            <span class="content_item_num">02</span>
+            <h2 class="content_item_title">Section2</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">You make mistakes.<br> Mistakes don't make you.</p>
+        </section>
+        <!-- //section2 -->
+
+        <section id="section3" class="content_item">
+            <span class="content_item_num">03</span>
+            <h2 class="content_item_title">Section3</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">Don't dream your life,<br> live your dream.</p>
+        </section>
+        <!-- //section3 -->
+
+        <section id="section4" class="content_item">
+            <span class="content_item_num">04</span>
+            <h2 class="content_item_title">Section4</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">Dream without fear.<br> Love without limits.</p>
+        </section>
+        <!-- //section4 -->
+
+        <section id="section5" class="content_item">
+            <span class="content_item_num">05</span>
+            <h2 class="content_item_title">Section5</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">The roots of education are bitter, but the fruit is sweet.</p>
+        </section>
+        <!-- //section5 -->
+
+        <section id="section6" class="content_item">
+            <span class="content_item_num">06</span>
+            <h2 class="content_item_title">Section6</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">The grass is greener where you water it.</p>
+        </section>
+        <!-- //section6 -->
+
+        <section id="section7" class="content_item">
+            <span class="content_item_num">07</span>
+            <h2 class="content_item_title">Section7</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">Whatever you are, be a good one.</p>
+        </section>
+        <!-- //section7 -->
+        
+        <section id="section8" class="content_item">
+            <span class="content_item_num">08</span>
+            <h2 class="content_item_title">Section8</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">Don't tell people your plans.<br> Show them your results.</p>
+        </section>
+        <!-- //section8 -->
+
+        <section id="section9" class="content_item">
+            <span class="content_item_num">09</span>
+            <h2 class="content_item_title">Section9</h2>
+            <figure class="content_item_imgWrap">
+                <div class="content_item_img"></div>
+            </figure>
+            <p class="content_item_desc">Die with memories,<br> not dreams.</p>
+        </section>
+        <!-- //section9 -->
+    </main>
+    <!-- //main -->
+
+    <footer id="paraFooter">
+        <h2>Parallax <em>Scrolling</em></h2>
+        <div class="footerInfo">
+            <h3>jQuery</h3>
+            <ul>
+                <li><a href="parallaxEffect01-jquery.html">1</a></li>
+                <li><a href="parallaxEffect02-jquery.html">2</a></li>
+                <li><a href="parallaxEffect03-jquery.html">3</a></li>
+                <li><a href="parallaxEffect04-jquery.html">4</a></li>
+                <li><a href="parallaxEffect05-jquery.html">5</a></li>
+                <li><a href="parallaxEffect06-jquery.html">6</a></li>
+                <li><a href="parallaxEffect07-jquery.html">7</a></li>
+                <li><a href="parallaxEffect08-jquery.html">8</a></li>
+            </ul>
+        </div>
+        <div class="footerInfo">
+            <h3>Javascript</h3>
+            <ul>
+                <li><a href="parallaxEffect01-javascript.html">1</a></li>
+                <li><a href="parallaxEffect02-javascript.html">2</a></li>
+                <li><a href="parallaxEffect03-javascript.html">3</a></li>
+                <li><a href="parallaxEffect04-javascript.html">4</a></li>
+                <li><a href="parallaxEffect05-javascript.html">5</a></li>
+                <li><a href="parallaxEffect06-javascript.html">6</a></li>
+                <li class="active"><a href="parallaxEffect07-javascript.html">7</a></li>
+                <li><a href="parallaxEffect08-javascript.html">8</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- script -->
+    <script>
+        //letter tokenizing(for all sections)
+        $(".content_item_desc").each(function() {
+            let text = $(this).text();
+            let split = text.split('').join("</span><span aria-hidden='true'>");
+            split = "<span aria-hidden='true'>" + split + "</span>";
+            $(this).html(split).attr("aria-label", text);
+            //** aria-hidden to take web standardization into account(screen readers)
+        });
+    </script>
+</body>
+</html>
