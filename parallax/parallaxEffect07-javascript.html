@@ -465,6 +465,8 @@
 
         window.addEventListener("scroll", function() {
             let scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
+            
             document.querySelectorAll(".content_item").forEach((elem, index) => {
                 if(scrollTop >= elem.offsetTop - 2) {
                     //text animation
