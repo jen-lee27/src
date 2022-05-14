@@ -446,7 +446,7 @@
         window.addEventListener("scroll", scrollProgress);
 
         function scrollProgress() {
-            let scrollTop = (window.scrollY || window.pageYOffset || document.documentElement.offsetTop) + window.innerHeight;
+            let scrollTop = (window.scrollY || window.pageYOffset || document.documentElement.scrollTop) + window.innerHeight;
             document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
 
             document.querySelectorAll(".content_item").forEach((elem, index) => {
