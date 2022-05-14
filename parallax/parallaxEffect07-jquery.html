@@ -530,14 +530,16 @@
             let scrollTop = $(this).scrollTop();
             $(".paraScroll span").text(parseInt(scrollTop));
 
-            $(".content_item").each(function(index1) {
+            $(".content_item").each(function(index) {
                 if(scrollTop >= $(this).offset().top - 2) {
-                    $(".paraNav ul li").eq(index1).addClass("active").siblings().removeClass("active");
+                    $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
 
-                    $(this).find(".content_item_desc span").each(function(index2) {
-                        setTimeout(function() {
-                            $(".content_item").eq(index1).find(".content_item_desc span").eq(index2).addClass("show");
-                        }, 50 * index2);
+                    //use arrow notation to make $(this) still be each elements of $(".content_item")
+                    //using function does NOT work
+                    $(this).find(".content_item_desc span").each(index => {
+                        setTimeout(() => {
+                            $(this).find(".content_item_desc span").eq(index).addClass("show");
+                        }, 50 * index);
                     });
                 }
             });
