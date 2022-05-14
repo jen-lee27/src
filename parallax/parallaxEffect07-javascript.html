@@ -272,7 +272,22 @@
             padding: 0px 20px;
         }
 
-        
+        /* one letter at a time */
+        /* .split span {
+            opacity: 0;
+            transition: all .3s;
+        }
+        .split span.show {
+            opacity: 1;
+        } */
+
+        /* using gsap: one letter at a time */
+        .split span {
+            opacity: 0;
+            transform: translateY(50px) rotate(234deg);
+            display: inline-block;
+            min-width: 1vw;
+        }
     </style>
 </head>
 <body class="parallax">
@@ -453,11 +468,20 @@
             document.querySelectorAll(".content_item").forEach((elem, index) => {
                 if(scrollTop >= elem.offsetTop - 2) {
                     //text animation
-                    elem.querySelectorAll(".content_item_desc span").forEach((span, index) => {
-                        setTimeout(() => {
-                            span.classList.add("show");
-                        }, 50 * index);
-                    })
+                    // elem.querySelectorAll(".split span").forEach((span, index) => {
+                    //     setTimeout(() => {
+                    //         span.classList.add("show");
+                    //     }, 50 * index);
+                    // })
+                    //using gsap
+                    gsap.to(elem.querySelectorAll(".split span"), {
+                        duration: .5,
+                        opacity: 1,
+                        y: 0,
+                        stagger: .05, /* delay in each span */
+                        ease: "power4.out",
+                        rotation: 0,
+                    });
 
                     document.querySelectorAll(".paraNav ul li").forEach(li => {
                         li.classList.remove("active");
