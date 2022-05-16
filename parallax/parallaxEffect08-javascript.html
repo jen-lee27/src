@@ -154,31 +154,31 @@
         }
 
         .content_item:nth-child(1) .content_item_img {
-            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg1.jpg");
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg11.jpg");
         }
         .content_item:nth-child(2) .content_item_img {
-            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg2.jpg");
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg12.jpg");
         }
         .content_item:nth-child(3) .content_item_img {
-            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg3.jpg");
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg13.jpg");
         }
         .content_item:nth-child(4) .content_item_img {
-            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg4.jpg");
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg14.jpg");
         }
         .content_item:nth-child(5) .content_item_img {
-            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg5.jpg");
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg15.jpg");
         }
         .content_item:nth-child(6) .content_item_img {
-            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg6.jpg");
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg16.jpg");
         }
         .content_item:nth-child(7) .content_item_img {
-            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg7.jpg");
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg17.jpg");
         }
         .content_item:nth-child(8) .content_item_img {
-            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg8.jpg");
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg18.jpg");
         }
         .content_item:nth-child(9) .content_item_img {
-            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg9.jpg");
+            background-image: url("https://webstoryboy.github.io/wtss/refer-effect/assets/img/bg19.jpg");
         }
 
          /* nav */
@@ -272,6 +272,96 @@
             padding: 0px 20px;
         }
 
+        /* animate reveal effect */
+        .reveal > div,
+        .reveal > span {
+            opacity: 0;
+        }
+        .reveal.show > div,
+        .reveal.show > span {
+            animation: opacity 1000ms linear forwards;
+        }
+
+        .reveal {
+            position: relative;
+        }
+        .reveal::before {
+            content: '';
+            position: absolute;
+            right: 0; top: 0;
+            width: 0; height: 100%;
+            z-index: 100;
+            background-color: #fff; 
+        }
+        .reveal.reveal-two::after {
+            content: '';
+            position: absolute;
+            right: 0; top: 0;
+            width: 0; height: 100%;
+            z-index: 100;
+            background-color: orange;
+        }
+        /* default: left to right */
+        .reveal.show::before {
+            animation: reveal 1000ms cubic-bezier(0.77, 0, 0.18, 1);
+        }
+        /* right to left */
+        .reveal.reveal-RTL.show::before {
+            animation: reveal-RTL 1000ms cubic-bezier(0.77, 0, 0.18, 1);
+        }
+        /* top to bottom */
+        .reveal.reveal-TTB.show::before {
+            animation: reveal-TTB 1000ms cubic-bezier(0.77, 0, 0.18, 1);
+        }
+        /* bottom to top */
+        .reveal.reveal-BTT.show::before {
+            animation: reveal-BTT 1000ms cubic-bezier(0.77, 0, 0.18, 1);
+        }
+
+        .reveal.show::after {
+            animation: reveal-RTL 1000ms 300ms cubic-bezier(0.77, 0, 0.18, 1);
+        }
+        .reveal.reveal-RTL.show::after {
+            animation: reveal-RTL 1000ms 300ms cubic-bezier(0.77, 0, 0.18, 1);
+        }
+        .reveal.reveal-TTB.show::after {
+            animation: reveal-TTB 1000ms 300ms cubic-bezier(0.77, 0, 0.18, 1);
+        }
+        .reveal.reveal-BTT.show::after {
+            animation: reveal-BTT 1000ms 300ms cubic-bezier(0.77, 0, 0.18, 1);
+        }
+
+        @keyframes opacity {
+            0%   {opacity: 0;}
+            60%  {opacity: 0;}
+            70%  {opacity: 1;}
+            100% {opacity: 1;}
+        }
+        @keyframes reveal {
+            0%   {width: 0; left: 0;}
+            50%  {width: 100%; left: 0;}
+            80%  {width: 100%; left: 0;}
+            100% {width: 0; left: 100%;}
+        }
+        @keyframes reveal-RTL {
+            0%   {width: 0; right: 0;}
+            50%  {width: 100%; right: 0;}
+            80%  {width: 100%; right: 0;}
+            100% {width: 0; right: 100%;}
+        }
+        @keyframes reveal-TTB {
+            0%   {width: 100%; height: 0; top: 0;}
+            50%  {width: 100%; height: 100%; top: 0;}
+            80%  {width: 100%; height: 100%; top: 0;}
+            100% {width: 100%; height: 0; top: 100%;}
+        }
+        @keyframes reveal-BTT {
+            0%   {width: 100%; height: 0; top: auto; bottom: 0;}
+            50%  {width: 100%; height: 100%; top: auto; bottom: 0;}
+            80%  {width: 100%; height: 100%; top: auto; bottom: 0;}
+            100% {width: 100%; height: 0; top: auto; bottom: 100%;}
+        }
+        
     </style>
 </head>
 <body class="parallax">
@@ -280,7 +370,7 @@
     <!-- //info -->
 
     <header id="paraHeader">
-        <h1>Parallax Effect08 - jQuery</h1>
+        <h1>Parallax Effect08 - Javascript</h1>
         <p>Parallax Scrolling Effect - Reveal Effect</p>
     </header>
     <!-- //header -->
@@ -304,90 +394,90 @@
         <section id="section1" class="content_item">
             <span class="content_item_num">01</span>
             <h2 class="content_item_title">Section1</h2>
-            <figure class="content_item_imgWrap">
+            <figure class="content_item_imgWrap reveal">
                 <div class="content_item_img"></div>
             </figure>
-            <p class="content_item_desc">Don't cry because it's over.<br> Smile because it happened.</p>
+            <p class="content_item_desc reveal" data-delay="500"><span>Don't cry because it's over.<br> Smile because it happened.</span></p>
         </section>
         <!-- //section1 -->
 
         <section id="section2" class="content_item">
             <span class="content_item_num">02</span>
             <h2 class="content_item_title">Section2</h2>
-            <figure class="content_item_imgWrap">
+            <figure class="content_item_imgWrap reveal reveal-RTL">
                 <div class="content_item_img"></div>
             </figure>
-            <p class="content_item_desc">You make mistakes.<br> Mistakes don't make you.</p>
+            <p class="content_item_desc reveal reveal-RTL" data-delay="500"><span>You make mistakes.<br> Mistakes don't make you.</span></p>
         </section>
         <!-- //section2 -->
 
         <section id="section3" class="content_item">
             <span class="content_item_num">03</span>
             <h2 class="content_item_title">Section3</h2>
-            <figure class="content_item_imgWrap">
+            <figure class="content_item_imgWrap reveal reveal-TTB">
                 <div class="content_item_img"></div>
             </figure>
-            <p class="content_item_desc">Don't dream your life,<br> live your dream.</p>
+            <p class="content_item_desc reveal reveal-TTB" data-delay="500"><span>Don't dream your life,<br> live your dream.</span></p>
         </section>
         <!-- //section3 -->
 
         <section id="section4" class="content_item">
             <span class="content_item_num">04</span>
             <h2 class="content_item_title">Section4</h2>
-            <figure class="content_item_imgWrap">
+            <figure class="content_item_imgWrap reveal reveal-BTT">
                 <div class="content_item_img"></div>
             </figure>
-            <p class="content_item_desc">Dream without fear.<br> Love without limits.</p>
+            <p class="content_item_desc reveal reveal-BTT" data-delay="500"><span>Dream without fear.<br> Love without limits.</span></p>
         </section>
         <!-- //section4 -->
 
         <section id="section5" class="content_item">
             <span class="content_item_num">05</span>
             <h2 class="content_item_title">Section5</h2>
-            <figure class="content_item_imgWrap">
+            <figure class="content_item_imgWrap reveal reveal-two">
                 <div class="content_item_img"></div>
             </figure>
-            <p class="content_item_desc">The roots of education are bitter, but the fruit is sweet.</p>
+            <p class="content_item_desc reveal reveal-two" data-delay="500"><span>The roots of education are bitter, but the fruit is sweet.</span></p>
         </section>
         <!-- //section5 -->
 
         <section id="section6" class="content_item">
             <span class="content_item_num">06</span>
             <h2 class="content_item_title">Section6</h2>
-            <figure class="content_item_imgWrap">
+            <figure class="content_item_imgWrap reveal reveal-two reveal-RTL">
                 <div class="content_item_img"></div>
             </figure>
-            <p class="content_item_desc">The grass is greener where you water it.</p>
+            <p class="content_item_desc reveal reveal-two reveal-RTL" data-delay="500"><span>The grass is greener where you water it.</span></p>
         </section>
         <!-- //section6 -->
 
         <section id="section7" class="content_item">
             <span class="content_item_num">07</span>
             <h2 class="content_item_title">Section7</h2>
-            <figure class="content_item_imgWrap">
+            <figure class="content_item_imgWrap reveal reveal-two reveal-TTB">
                 <div class="content_item_img"></div>
             </figure>
-            <p class="content_item_desc">Whatever you are, be a good one.</p>
+            <p class="content_item_desc reveal reveal-two reveal-TTB" data-delay="500"><span>Whatever you are, be a good one.</span></p>
         </section>
         <!-- //section7 -->
         
         <section id="section8" class="content_item">
             <span class="content_item_num">08</span>
             <h2 class="content_item_title">Section8</h2>
-            <figure class="content_item_imgWrap">
+            <figure class="content_item_imgWrap reveal reveal-two reveal-BTT">
                 <div class="content_item_img"></div>
             </figure>
-            <p class="content_item_desc">Don't tell people your plans.<br> Show them your results.</p>
+            <p class="content_item_desc reveal reveal-two reveal-BTT" data-delay="500"><span>Don't tell people your plans.<br> Show them your results.</span></p>
         </section>
         <!-- //section8 -->
 
         <section id="section9" class="content_item">
             <span class="content_item_num">09</span>
             <h2 class="content_item_title">Section9</h2>
-            <figure class="content_item_imgWrap">
+            <figure class="content_item_imgWrap reveal reveal-two reveal-BTT">
                 <div class="content_item_img"></div>
             </figure>
-            <p class="content_item_desc">Die with memories,<br> not dreams.</p>
+            <p class="content_item_desc reveal reveal-two reveal-RTL" data-delay="500"><span>Die with memories,<br> not dreams.</span></p>
         </section>
         <!-- //section9 -->
     </main>
@@ -405,7 +495,7 @@
                 <li><a href="parallaxEffect05-jquery.html">5</a></li>
                 <li><a href="parallaxEffect06-jquery.html">6</a></li>
                 <li><a href="parallaxEffect07-jquery.html">7</a></li>
-                <li class="active"><a href="parallaxEffect08-jquery.html">8</a></li>
+                <li><a href="parallaxEffect08-jquery.html">8</a></li>
             </ul>
         </div>
         <div class="footerInfo">
@@ -418,32 +508,53 @@
                 <li><a href="parallaxEffect05-javascript.html">5</a></li>
                 <li><a href="parallaxEffect06-javascript.html">6</a></li>
                 <li><a href="parallaxEffect07-javascript.html">7</a></li>
-                <li><a href="parallaxEffect08-javascript.html">8</a></li>
+                <li class="active"><a href="parallaxEffect08-javascript.html">8</a></li>
             </ul>
         </div>
     </footer>
     <!-- //footer -->
 
     <!-- script -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script>
-        $(".paraNav ul li").click(function(e) {
-            e.preventDefault();
-            let index = $(this).index();
-            let section = $(".content_item").eq(index);
-            let offset = section.offset().top;
-            $("html, body").animate({scrollTop: offset}, 400, "easeInOutCirc");
+        document.querySelectorAll(".paraNav ul li a").forEach(elem => {
+            elem.addEventListener("click", function(e) {
+                e.preventDefault();
+                document.querySelector(elem.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            })
         });
 
-        $(window).scroll(function() {
-            let scrollTop = $(this).scrollTop();
-            $(".paraScroll span").text(parseInt(scrollTop));
+        const scrollReveal = function(scrollTop) {
+            const reveal = document.querySelectorAll(".reveal");
+            reveal.forEach(function(elem) {
+                const delay = elem.dataset.delay;
 
-            $(".content_item").each(function(index) {
-                if(scrollTop >= $(this).offset().top - 2) {
-                    $(".paraNav ul li").eq(index).addClass("active").siblings().removeClass("active");
+                if(scrollTop >= elem.parentElement.offsetTop) {
+                    if(delay == undefined) { //if there is no delay
+                        elem.classList.add("show");
+                    }
+                    else { //if delay value is already defined
+                        setTimeout(() => {
+                            elem.classList.add("show");
+                        }, delay);
+                    }
+                }
+            });
+        }
+
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
+
+            scrollReveal(scrollTop);
+
+            document.querySelectorAll(".content_item").forEach((elem, index) => {
+                if(scrollTop >= elem.offsetTop - 2) {
+                    document.querySelectorAll(".paraNav ul li").forEach(li => {
+                        li.classList.remove("active");
+                    });
+                    document.querySelector(".paraNav ul li:nth-child(" + (index + 1) + ")").classList.add("active");
                 }
             });
         });
