@@ -1,6 +1,22 @@
-/* Reset */
+/* nav */
+#nav {position: absolute; left: 0; bottom: 0; width: 100%; height: 61px; z-index: 1000; background-color: rgba(0,0,0,0.6);}
+#nav.on {position: fixed; top: 0;}
+#nav h1 {float: left; color: #fff; font-size: 40px; padding: 5px 5px 5px 15px; font-family: 'Abel' }
+#nav .menu {float: right; padding-right: 10px; }
+#nav .menu li {display: inline; }
+#nav .menu li a {display: inline-block; padding: 20px 15px; color: #fff; font-weight: bold; font-family: 'Abel'; text-transform: capitalize;}
+#nav .menu li a:hover {padding-bottom: 4px; border-bottom: 2px dashed #fff;}
 
-body { margin: 0 auto; }
+/* contents */
+#contents {text-align: center; color: #fff; background: #1f233d;}
+#contents > section {width: 100%;}
+
+/* section */
+#header {height: 100vh; background: linear-gradient(#1f233d, #0B4F6C); position: relative; text-align: center;}
+#s-info {}
+#s-skills {}
+#s-proj {}
+#s-contact {}
 
 /* contents container */
 /* 1024px maximum with equal margin on both sides */
@@ -8,39 +24,40 @@ body { margin: 0 auto; }
 
 /* shared attributes */
 h1, h2, h3, h4 {font-family: "Roboto", sans-serif;}
-h1, h2 { font-size: 1.8em; text-align: center; margin-bottom: 30px; }
+h3 { font-size: 3.8em; text-align: center; margin-bottom: 40px; text-transform: uppercase; font-family: 'Archivo Narrow', sans-serif;}
 
 /* header */
-#header { width: 100%; background: #f2f2f2; text-align: center;}
-.header {padding: 50px 0;}
+.header { position: absolute; top: 40%; transform: translate(0, -40%); width: 100%;}
+.header h2 {font-family: 'Permanent Marker', cursive; font-size: 6em; color: #fcf4d1; padding-bottom: 20px;}
+.header p {font-family: 'Shadows Into Light', cursive; font-size: 2.8em; color: #FFFD98; font-style: italic;}
 
-/* nav */
-#nav { width: 100%; background: #1f233d; opacity: 90%; position: sticky; top: -1px; left: 0; z-index: 100;}
-.nav {padding: 0 10px;}
-.nav ul {display: flex;}
-.nav li {padding-right: 30px;}
-.nav li a {color: #fff; display: inline-block; padding: 30px 0;}
-.nav li a:hover {padding-bottom: 4px; border-bottom: 2px dashed #fff;}
-
-/* section: introduction */
-#s-info {width: 100%; background: #fff;}
-.s-info {padding: 50px 0;}
+/* section: about me */
+.s-info {padding: 100px 0;}
 
 /* section: skills */
-#s-skills {width: 100%; background: #e3e3e3;}
-.s-skills {padding: 50px 0;}
-.card-wrapper {display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; grid-gap: 20px;}
-.card {background: #fff;}
-.card .card-content {padding: 30px 20px; box-sizing: border-box; background: #fff;}
-.card .card-content .card-icon {width: 100px; height: 100px; margin: 0 auto;}
-/* those without icons */
-    .card .card-content .card-icon span {font-size: 3em; display: block; padding-top: 20px; font-style: italic;}
-.card .card-content .card-title {display: block; text-align: center; font-size: 1.3em; padding-top: 10px; font-family: Abel, serif; font-weight: bold;}
+.s-skills {padding: 100px 0;}
+.card-wrapper {}
+.card {background: #23395B; padding-top: 20px; margin-bottom: 30px;}
+.card .card-title {font-size: 2.2em; font-family: Abel, serif; font-weight: bold; color: #fff; margin-bottom: 10px;}
+.card .card-desc {}
+.card .card-bar {width: 100%; height: 5px; margin-top: 20px; background: #000;}
+.card .card-val {background: #fcf4d1; height: 100%; position: relative;}
+.card .card-val.p70 {width: 70%;}
+.card .card-val.p75 {width: 75%;}
+.card .card-val.p80 {width: 80%;}
+.card .card-val.p85 {width: 85%;}
+.card .card-val.p90 {width: 90%;}
+.card .card-val.p95 {width: 95%;}
+.card .card-val.p100 {width: 100%;}
+.card .card-val-desc {position: absolute; bottom: 5px; right: 0; font-size: 1.04em;}
 
 
 /* section: projects */
-#s-proj {width: 100%; background: #fff;}
-.s-proj {padding: 50px 0;}
-.card-project {display: flex; align-items: center; width: 100%; background: linear-gradient(#1f233d, #767b9c); border-radius: 50px; padding: 0 30px; box-sizing: border-box;}
-.card-project img {width: 30%; padding: 0 30px;}
-.card-project figcaption {width: 70%; font-size: 3.6em; color: #fff;}
+.s-proj {padding: 100px 0;}
+.project {display: flex; align-items: center; width: 100%; padding: 100px 0; box-sizing: border-box; position: relative;}
+.project .project-img {width: 70%; z-index: 100;}
+.project .project-img img {width: 100%;}
+.project .project-contents .project-num {font-size: 30em; position: absolute; bottom: 120px; left: -130px; font-family: 'Archivo Narrow', sans-serif; transform: rotate(-20deg);}
+.project .project-contents .project-title {width: 30%; font-size: 3em; color: #fff; text-transform: uppercase;}
+.project .project-contents .project-desc {}
+.project .project-contents .project_link {}
