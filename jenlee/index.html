@@ -3,153 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Web Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abel&family=Roboto&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap">
+    
+    <!-- stylesheets -->
     <link rel="stylesheet" href="css/fontawesome.css" type="text/css">
     <link rel="stylesheet" href="css/regular.css" type="text/css">
     <link rel="stylesheet" href="css/solid.css" type="text/css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <title>WEB222 Final</title>
+    <title>Sangin Lee</title>
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="container">
-            <div id="header-img">
-                <img src="img/web-development-g372838d0d_640.png" alt="Profile Image">
-            </div>
-            <div id="header-desc">
+            <div class="header">
                 <h1>Sangin(Jenny) Lee</h1>
-                <p>Front-end Developer</p>
-                <a href="img/JennyLee.pdf" id="btn-resume" download><i class="fa-solid fa-download"></i> Resume</a>
-                <a href="#section-contact" id="btn-contact">Contact Me</a>
+                <p>Front-end Web Developer</p>
+                <!-- <a href="img/JennyLee.pdf" id="btn-resume" download><i class="fa-solid fa-download"></i> Resume</a>
+                <a href="#section-contact" id="btn-contact">Contact Me</a> -->
             </div>
         </div>
     </header>
-    <main>
-        <section id="section-info">
+    <!-- //header -->
+
+    <nav id="nav">
+        <div class="container">
+            <div class="nav">
+                <ul>
+                    <li><a href="#">Download Resume</a></li>
+                    <li><a href="#s-proj">Projects</a></li>
+                    <li><a href="https://www.linkedin.com/in/sanginjlee/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://github.com/jen-lee27" target="_blank">Github</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- //nav -->
+
+    <main id="main">
+        <section id="s-info">
             <div class="container">
-                <div id="honesty">
-                    <h2>Honesty Statement</h2>
-                    <p>I declare that my assessment is wholly my own work in accordance with Seneca Academic Policy. No part of this assessment has been copied manually or electronically from any other source (including web sites) except for the information supplied by the WEB222 instructors and / or made available in this assessment for my use. I also declare that no part of this assignment has been distributed to other students.</p>
-                    <span>Dated: <time datetime="2022-04-10">April 10th, 2022</time></span>
-                </div>
-                <div id="info">
-                    <h2>Basic Information</h2>
+                <div class="s-info">
+                    <h2>Introduction</h2>
                     <ul>
                         <li>Name: <span>Jenny Lee</span></li>
-                        <li>Student ID: <span>127 930 212</span></li>
                         <li>Email: <span>jlee689@myseneca.ca</span></li>
-                        <li>Course: <span>WEB 222</span></li>
-                        <li>Section: <span>NAA</span></li>
-                        <li>Instructor: <span>David Humphrey</span></li>
                     </ul>
                 </div>
             </div>
         </section>
-        <section id="section-edu">
+        <!-- //section: introduction -->
+
+        <section id="s-skills">
             <div class="container">
-                <h2>Education</h2>
-                <div class="card-wrapper">
-                    <div class="card-left">
-                        <span>2021 - 2023</span>
-                    </div>
-                    <div class="card-right">
-                        <h3>Computer Programming</h3>
-                        <h4>Seneca College</h4>
-                    </div>
-                </div>
-                <div class="card-wrapper">
-                    <div class="card-left">
-                        <span>2011 - 2015</span>
-                    </div>
-                    <div class="card-right">
-                        <h3>Computer Science</h3>
-                        <h4>University of Waterloo</h4>
+                <div class="s-skills">
+                    <h2>Skills</h2>
+                    <div class="card-wrapper">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-icon">    
+                                    <svg viewBox="0 0 128 128">
+                                        <path fill="#E44D26" d="M9.032 2l10.005 112.093 44.896 12.401 45.02-12.387L118.968 2H9.032zm89.126 26.539l-.627 7.172L97.255 39H44.59l1.257 14h50.156l-.336 3.471-3.233 36.119-.238 2.27L64 102.609v.002l-.034.018-28.177-7.423L33.876 74h13.815l.979 10.919L63.957 89H64v-.546l15.355-3.875L80.959 67H33.261l-3.383-38.117L29.549 25h68.939l-.33 3.539z"></path>
+                                    </svg>
+                                </div>
+                                <span class="card-title">HTML</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 128 128">
+                                        <path fill="#1572B6" d="M8.76 1l10.055 112.883 45.118 12.58 45.244-12.626L119.24 1H8.76zm89.591 25.862l-3.347 37.605.01.203-.014.467v-.004l-2.378 26.294-.262 2.336L64 101.607v.001l-.022.019-28.311-7.888L33.75 72h13.883l.985 11.054 15.386 4.17-.004.008v-.002l15.443-4.229L81.075 65H48.792l-.277-3.043-.631-7.129L47.553 51h34.749l1.264-14H30.64l-.277-3.041-.63-7.131L29.401 23h69.281l-.331 3.862z"></path>
+                                    </svg>        
+                                </div>
+                                <span class="card-title">CSS</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 128 128">
+                                        <path fill="#F0DB4F" d="M2 1v125h125V1H2zm66.119 106.513c-1.845 3.749-5.367 6.212-9.448 7.401-6.271 1.44-12.269.619-16.731-2.059-2.986-1.832-5.318-4.652-6.901-7.901l9.52-5.83c.083.035.333.487.667 1.071 1.214 2.034 2.261 3.474 4.319 4.485 2.022.69 6.461 1.131 8.175-2.427 1.047-1.81.714-7.628.714-14.065C58.433 78.073 58.48 68 58.48 58h11.709c0 11 .06 21.418 0 32.152.025 6.58.596 12.446-2.07 17.361zm48.574-3.308c-4.07 13.922-26.762 14.374-35.83 5.176-1.916-2.165-3.117-3.296-4.26-5.795 4.819-2.772 4.819-2.772 9.508-5.485 2.547 3.915 4.902 6.068 9.139 6.949 5.748.702 11.531-1.273 10.234-7.378-1.333-4.986-11.77-6.199-18.873-11.531-7.211-4.843-8.901-16.611-2.975-23.335 1.975-2.487 5.343-4.343 8.877-5.235l3.688-.477c7.081-.143 11.507 1.727 14.756 5.355.904.916 1.642 1.904 3.022 4.045-3.772 2.404-3.76 2.381-9.163 5.879-1.154-2.486-3.069-4.046-5.093-4.724-3.142-.952-7.104.083-7.926 3.403-.285 1.023-.226 1.975.227 3.665 1.273 2.903 5.545 4.165 9.377 5.926 11.031 4.474 14.756 9.271 15.672 14.981.882 4.916-.213 8.105-.38 8.581z"></path>
+                                    </svg>                    
+                                </div>
+                                <span class="card-title">Javascript</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-icon">                      
+                                    <svg viewBox="0 0 128 128">
+                                        <path fill="#0868AC" d="M9.625 32.181C-1.404 48.032-.031 68.657 8.394 85.501c.2.404.41.801.617 1.198l.394.759.246.437.439.786c.262.461.53.92.804 1.379l.459.756c.304.491.615.976.933 1.46l.398.614c.439.655.888 1.309 1.352 1.951l.039.05.228.308c.401.553.814 1.099 1.232 1.639l.464.59c.373.469.752.935 1.138 1.399l.435.52a75.27 75.27 0 001.586 1.812l.033.033.061.068a80.44 80.44 0 001.612 1.699l.517.521c.423.426.853.845 1.287 1.262l.527.5c.58.547 1.166 1.083 1.764 1.607l.028.022.307.262c.527.456 1.063.909 1.603 1.353l.664.529c.441.354.887.702 1.336 1.044l.714.543c.496.365.995.724 1.499 1.075l.546.387.15.107c.478.329.967.646 1.456.963l.63.42c.75.474 1.51.943 2.279 1.396l.63.355c.565.326 1.134.646 1.71.959.312.168.632.327.946.488.407.213.811.429 1.225.636l.283.137.501.242c.641.306 1.287.607 1.94.897l.41.184a66.92 66.92 0 002.263.941l.551.217c.704.271 1.418.539 2.135.791l.268.093c.787.275 1.581.53 2.381.779l.575.172c.814.245 1.619.538 2.458.693 53.339 9.727 68.833-32.053 68.833-32.053-13.013 16.953-36.111 21.425-57.996 16.446-.829-.187-1.633-.446-2.442-.685l-.609-.185a72.498 72.498 0 01-2.352-.765l-.323-.117a72.245 72.245 0 01-2.074-.769l-.582-.229c-.752-.297-1.5-.607-2.239-.931l-.447-.198a92.857 92.857 0 01-1.889-.879l-.546-.262c-.491-.239-.977-.493-1.461-.743-.324-.171-.654-.332-.975-.51a58.591 58.591 0 01-1.751-.982l-.591-.33a81.221 81.221 0 01-2.28-1.397l-.615-.41a59.283 59.283 0 01-1.623-1.079l-.522-.367a89.287 89.287 0 01-1.534-1.109l-.679-.514a64.473 64.473 0 01-1.384-1.082l-.617-.495a82.693 82.693 0 01-1.724-1.453l-.189-.159a83.466 83.466 0 01-1.812-1.647l-.511-.491c-.441-.42-.875-.843-1.302-1.277l-.51-.509a70.541 70.541 0 01-1.598-1.69l-.079-.084a67.39 67.39 0 01-1.621-1.844l-.424-.504a70.602 70.602 0 01-1.167-1.442l-.427-.532a78.406 78.406 0 01-1.347-1.794c-12.15-16.574-16.516-39.432-6.805-58.204m25.629-2.434c-7.977 11.478-7.543 26.844-1.321 38.983a50.581 50.581 0 003.528 5.889c1.195 1.713 2.52 3.751 4.106 5.127a48.111 48.111 0 001.79 1.858l.472.465a51.69 51.69 0 001.828 1.698l.074.064.018.018a55.268 55.268 0 002.135 1.767l.485.378a54.08 54.08 0 002.233 1.631l.065.049c.336.232.678.448 1.019.672l.483.319c.544.349 1.095.689 1.655 1.015l.235.136c.483.278.972.552 1.463.818l.521.271c.339.177.678.358 1.023.53l.155.07c.703.346 1.412.68 2.136.995l.472.194c.579.246 1.164.486 1.75.71l.75.275c.533.198 1.068.378 1.607.559l.727.233c.767.238 1.525.539 2.324.672 41.183 6.823 50.691-24.886 50.691-24.886-8.57 12.343-25.168 18.233-42.879 13.635a50.376 50.376 0 01-2.333-.674l-.701-.227a45.423 45.423 0 01-1.631-.562l-.736-.274a56.418 56.418 0 01-1.756-.708l-.473-.2a47.728 47.728 0 01-2.148-.999c-.363-.177-.72-.364-1.078-.548l-.622-.32a44.502 44.502 0 01-1.363-.77l-.326-.185a47.844 47.844 0 01-1.651-1.008l-.498-.332a61.759 61.759 0 01-1.069-.707 57.456 57.456 0 01-2.226-1.628l-.501-.395c-7.752-6.12-13.898-14.486-16.819-23.971-3.062-9.836-2.402-20.878 2.903-29.84m22.278-.775c-4.702 6.92-5.164 15.514-1.901 23.156 3.441 8.113 10.491 14.476 18.72 17.495.339.125.679.237 1.022.354l.451.143c.485.152.966.329 1.467.424 22.74 4.394 28.908-11.669 30.549-14.034-5.402 7.779-14.482 9.646-25.623 6.942-.88-.213-1.847-.531-2.695-.832a33.242 33.242 0 01-3.201-1.329 33.215 33.215 0 01-5.612-3.424c-9.969-7.565-16.162-21.994-9.657-33.745"></path>
+                                    </svg>
+                                </div>
+                                <div class="card-title">jQuery</div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-icon"><span>SQL</span></div>
+                                <span class="card-title">SQL</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 128 128">
+                                        <path fill="#03599C" d="M117.5 33.5l.3-.2c-.6-1.1-1.5-2.1-2.4-2.6L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.3.9 3.4l-.2.1c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7 1.2 0 2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c.1-.8 0-1.7-.4-2.6zM64 88.5c9.1 0 17.1-5 21.3-12.4l12.9 7.6c-6.8 11.8-19.6 19.8-34.2 19.8-21.8 0-39.5-17.7-39.5-39.5S42.2 24.5 64 24.5c14.7 0 27.5 8.1 34.3 20l-13 7.5C81.1 44.5 73.1 39.5 64 39.5c-13.5 0-24.5 11-24.5 24.5s11 24.5 24.5 24.5z"></path>
+                                    </svg>                    
+                                </div>
+                                <span class="card-title">C</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 128 128">
+                                        <path fill="#0074BD" d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zm-2.988-13.665s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"></path><path fill="#EA2D2E" d="M69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58 0 .001-42.731 10.67-22.324 34.187z"></path><path fill="#0074BD" d="M102.123 108.229s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.094.171-4.451-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zm40.697 22.747c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-1.543c14.953-5.255 26.451 15.503-4.823 23.725 0-.002.359-.327.468-.617z"></path><path fill="#EA2D2E" d="M76.491 1.587S89.459 14.563 64.188 34.51c-20.266 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815C58.041 28.42 81.722 22.195 76.491 1.587z"></path><path fill="#0074BD" d="M52.214 126.021c22.476 1.437 57-.8 57.817-11.436 0 0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874 0 .001 2.875 2.381 17.647 3.331z"></path>
+                                    </svg>
+                                  </div>
+                                <span class="card-title">Java</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 128 128">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" fill="#80B5E2" d="M50.246 41.616c-3.682-.925-7.369-.628-11.26-.022 0 6.805-.014 13.427.037 20.05.002.339.511.929.841.974 4.243.573 8.463.619 12.431-1.315 4.105-2 6.196-6.182 5.654-11.092-.492-4.471-3.139-7.448-7.703-8.595zM127 63.963V3.285c0-2.096.023-2.285-2.012-2.285H3.479C1.5 1 1 1.19 1 3.186v121.509c0 2.018.252 2.021 2.209 2.021 40.555.001 81.231-.009 121.786.037 1.573.002 1.995-.417 1.991-1.959-.054-20.277.014-40.556.014-60.831zm-70.648 5.84C50.795 71.785 45 71.896 39 71.431V94H28v-1.402c0-18.895-.087-37.788-.14-56.682-.006-1.569.243-2.327 2.011-2.507 8.332-.852 16.617-1.81 24.902.133 8.906 2.087 14.041 7.975 14.431 16.11.483 10.074-3.944 16.974-12.852 20.151zm44.31 12.754c-.424 5.771-3.678 9.56-9.015 11.392-7.142 2.452-14.245 1.883-21.225-.891-1.143-.455-1.364-1.031-.987-2.196.687-2.126 1.19-4.312 1.72-6.286 2.951.866 5.757 1.947 8.664 2.458 2.053.361 4.272.149 6.359-.178 1.871-.294 3.217-1.564 3.524-3.572.312-2.041-.303-3.809-2.105-4.895-1.432-.862-3.01-1.479-4.523-2.202-2.433-1.163-5.026-2.075-7.27-3.53-8.831-5.727-5.956-16.383-.063-20.396 3.153-2.146 6.642-3.098 10.377-3.229 4.393-.154 8.623.604 12.778 2.623l-2.195 7.789c-1.74-.616-3.36-1.416-5.07-1.734-2.029-.378-4.157-.589-6.205-.422-2.746.225-4.354 2.12-4.354 4.47 0 1.392.528 2.57 1.689 3.245 1.666.969 3.434 1.768 5.186 2.579 1.896.877 3.898 1.551 5.723 2.552 4.87 2.67 7.405 6.8 6.992 12.423z"></path>
+                                    </svg>
+                                </div>
+                                <span class="card-title">Photoshop</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="section-contact">
+        <!-- //section: skills -->
+
+        <section id="s-proj">
             <div class="container">
-                <h2>Contact Me</h2>
-                <form method="POST" action="https://httpbin.org/post">
-                    <div class="row">
-                        <label for="form-name"><span class="required">*</span>Name</label>
-                        <input type="text" id="form-name" name="name" placeholder="Enter your full name" tabindex="1" required >
+                <div class="s-proj">
+                    <h2>Projects</h2>
+                    <figure class="card-project">
+                        <img src="img/responsive_mockup.png" alt="Responsive Web Image">
+                        <figcaption>Responsive Web</figcaption>
                     </div>
-                    <div class="row">
-                        <label for="form-email"><span class="required">*</span>Email</label>
-                        <input type="email" id="form-email" name="email" placeholder="temp@example.com" tabindex="2" required >
-                    </div>
-                    <div class="row flex">
-                        <div>
-                            <label for="form-addr"><span class="required">*</span>Address</label>
-                            <input type="text" id="form-addr" name="addr" placeholder="Street Address" tabindex="3" required >
-                        </div>
-                        <div>
-                            <!-- Postal Code (must be a valid Canadian Postal Code, with or without a space, use a regex pattern) -->
-                            <label for="form-postal"><span class="required">*</span>Postal Code</label>
-                            <input type="text" id="form-postal" name="postalCode" placeholder="M5W 1E6" tabindex="4" pattern="^[A-Za-z]\d[A-Za-z] ?\d[A-Za-z]\d$" required >
-                        </div>
-                    </div>
-                    <div class="row flex">
-                        <div>
-                            <!-- Province -->
-                            <label for="form-prov"><span class="required">*</span>Province</label>
-                            <select id="form-prov" name="province" tabindex="5">
-                                <option value="AB">Alberta</option>
-                                <option value="BC">British Columbia</option>
-                                <option value="MB">Manitoba</option>
-                                <option value="NB">New Brunswick</option>
-                                <option value="NL">Newfoundland and Labrador</option>
-                                <option value="NT">Northwest Territories</option>
-                                <option value="NS">Nova Scotia</option>
-                                <option value="NU">Nunavut</option>
-                                <option selected value="ON">Ontario</option>
-                                <option value="PE">Prince Edward Island</option>
-                                <option value="QC">Quebec</option>
-                                <option value="SK">Saskatchewan</option>
-                                <option value="YT">Yukon</option>
-                            </select>
-                        </div>
-                        <div>
-                            <!-- City -->
-                            <label for="form-city"><span class="required">*</span>City</label>
-                            <input type="text" list="form-city" name="city" placeholder="City" tabindex="6" required >
-                            <datalist id="form-city">
-                            </datalist>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <!-- Radio Button Options to specify what this is about: one of "Question", "Comment", or "Hiring" -->
-                        <div id="options-list">
-                            <div>
-                                <input type="radio" id="radio-question" name="option" value="question" tabindex="7" checked>
-                                <label for="radio-question">Question</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="radio-comment" name="option" value="comment">
-                                <label for="radio-comment">Comment</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="radio-hiring" name="option" value="hiring">
-                                <label for="radio-hiring">Hiring</label>
-                            </div>
-                        </div>
-                        <input type="number" id="hourly-rate" name="hourlyRate" placeholder="Enter the hourly rate">
-                    </div>
-                    <div class="row">
-                        <!-- A large area to enter the message that they want to send (it can show at least 5 lines of text at the same time) -->
-                        <label for="form-msg"><span class="required">*</span>Message</label>
-                        <textarea id="form-msg" name="message" placeholder="Please describe here" rows="5" tabindex="8" required ></textarea>
-                    </div>
-                    <div class="row right">
-                        <input type="submit" name="submit" value="Submit" tabindex="9">
-                    </div>
-                </form>
+                </div>
             </div>
         </section>
+        <!-- //section: projects -->
     </main>
+
     <!-- JavaScript Files -->
-    <script src="js/citylist.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
